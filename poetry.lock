@@ -267,6 +267,7 @@ tests = ["flufl.lock", "pytest (>=3.0.0)"]
 [package.source]
 type = "url"
 url = "https://github.com/SciTools/cartopy/archive/refs/tags/v0.19.0.post1.zip"
+
 [[package]]
 name = "certifi"
 version = "2021.10.8"
@@ -688,7 +689,7 @@ yaml = ["pyyaml"]
 
 [[package]]
 name = "filelock"
-version = "3.4.2"
+version = "3.5.1"
 description = "A platform independent file lock."
 category = "dev"
 optional = false
@@ -790,11 +791,11 @@ ssh = ["paramiko"]
 
 [[package]]
 name = "gdal"
-version = "3.4.1"
+version = "3.2.1"
 description = "GDAL: Geospatial Data Abstraction Library"
 category = "main"
-optional = true
-python-versions = ">=3.6.0"
+optional = false
+python-versions = "*"
 
 [package.extras]
 numpy = ["numpy (>1.0.0)"]
@@ -877,7 +878,7 @@ python-versions = "*"
 
 [[package]]
 name = "holoviews"
-version = "1.14.7"
+version = "1.14.8"
 description = "Stop plotting your data - annotate your data and let it visualize itself."
 category = "main"
 optional = true
@@ -886,14 +887,15 @@ python-versions = ">=2.7"
 [package.dependencies]
 colorcet = "*"
 numpy = ">=1.0"
+packaging = "*"
 pandas = ">=0.20.0"
 panel = ">=0.8.0"
 param = ">=1.9.3,<2.0"
 pyviz-comms = ">=0.7.4"
 
 [package.extras]
-all = ["plotly (>=4.0)", "netcdf4", "scikit-image", "bokeh (>=1.1.0)", "ffmpeg", "xarray (>=0.10.4)", "notebook", "ibis-framework (>=1.3)", "path.py", "flake8", "pillow", "matplotlib (>=3)", "dash (>=1.16)", "scipy", "cftime", "networkx", "nbconvert", "coveralls", "dask", "rfc3986", "shapely", "ipython (>=5.4.0)", "twine", "nbsmoke (>=0.2.0)", "keyring", "streamz (>=0.5.0)", "nose", "pyarrow", "datashader (>=0.11.1)", "deepdiff", "mock"]
-basic_tests = ["nose", "mock", "flake8", "coveralls", "path.py", "matplotlib (>=3)", "nbsmoke (>=0.2.0)", "nbconvert", "twine", "rfc3986", "keyring", "bokeh (>=1.1.0)", "pandas", "ipython (>=5.4.0)", "notebook"]
+all = ["streamz (>=0.5.0)", "datashader (>=0.11.1)", "notebook", "nbsmoke (>=0.2.0)", "nbconvert", "xarray (>=0.10.4)", "netcdf4", "networkx", "path.py", "codecov", "numpy (<1.22)", "ffmpeg", "flake8", "scipy", "scikit-image", "dask", "nose", "ipython (>=5.4.0)", "matplotlib (>=3)", "dash (>=1.16)", "mock", "shapely", "cftime", "bokeh (>=1.1.0)", "pillow", "pyarrow", "plotly (>=4.0)", "deepdiff"]
+basic_tests = ["nose", "mock", "flake8", "path.py", "matplotlib (>=3)", "nbsmoke (>=0.2.0)", "nbconvert", "codecov", "numpy (<1.22)", "bokeh (>=1.1.0)", "pandas", "ipython (>=5.4.0)", "notebook"]
 build = ["param (>=1.7.0)", "setuptools (>=30.3.0)", "pyct (>=0.4.4)"]
 doc = ["ipython (>=5.4.0)", "notebook", "matplotlib (>=3)", "bokeh (>=1.1.0)", "networkx", "pillow", "xarray (>=0.10.4)", "plotly (>=4.0)", "dash (>=1.16)", "streamz (>=0.5.0)", "datashader (>=0.11.1)", "ffmpeg", "cftime", "netcdf4", "dask", "scipy", "shapely", "scikit-image", "nbsite (>=0.7.1)", "sphinx", "mpl-sample-data (>=3.1.3)", "pscript", "graphviz", "bokeh (>2.2)", "pydata-sphinx-theme", "sphinx-copybutton", "pooch"]
 examples = ["ipython (>=5.4.0)", "notebook", "matplotlib (>=3)", "bokeh (>=1.1.0)", "networkx", "pillow", "xarray (>=0.10.4)", "plotly (>=4.0)", "dash (>=1.16)", "streamz (>=0.5.0)", "datashader (>=0.11.1)", "ffmpeg", "cftime", "netcdf4", "dask", "scipy", "shapely", "scikit-image"]
@@ -901,8 +903,8 @@ extras = ["ipython (>=5.4.0)", "notebook", "matplotlib (>=3)", "bokeh (>=1.1.0)"
 nbtests = ["ipython (>=5.4.0)", "notebook", "matplotlib (>=3)", "bokeh (>=1.1.0)", "nose", "deepdiff"]
 notebook = ["ipython (>=5.4.0)", "notebook"]
 recommended = ["ipython (>=5.4.0)", "notebook", "matplotlib (>=3)", "bokeh (>=1.1.0)"]
-tests = ["nose", "mock", "flake8", "coveralls", "path.py", "matplotlib (>=3)", "nbsmoke (>=0.2.0)", "nbconvert", "twine", "rfc3986", "keyring"]
-unit_tests = ["ipython (>=5.4.0)", "notebook", "matplotlib (>=3)", "bokeh (>=1.1.0)", "networkx", "pillow", "xarray (>=0.10.4)", "plotly (>=4.0)", "dash (>=1.16)", "streamz (>=0.5.0)", "datashader (>=0.11.1)", "ffmpeg", "cftime", "netcdf4", "dask", "scipy", "shapely", "scikit-image", "nose", "mock", "flake8", "coveralls", "path.py", "nbsmoke (>=0.2.0)", "nbconvert", "twine", "rfc3986", "keyring", "pyarrow", "ibis-framework (>=1.3)"]
+tests = ["nose", "mock", "flake8", "path.py", "matplotlib (>=3)", "nbsmoke (>=0.2.0)", "nbconvert", "codecov", "numpy (<1.22)"]
+unit_tests = ["ipython (>=5.4.0)", "notebook", "matplotlib (>=3)", "bokeh (>=1.1.0)", "networkx", "pillow", "xarray (>=0.10.4)", "plotly (>=4.0)", "dash (>=1.16)", "streamz (>=0.5.0)", "datashader (>=0.11.1)", "ffmpeg", "cftime", "netcdf4", "dask", "scipy", "shapely", "scikit-image", "nose", "mock", "flake8", "path.py", "nbsmoke (>=0.2.0)", "nbconvert", "codecov", "numpy (<1.22)", "pyarrow"]
 
 [[package]]
 name = "hvplot"
@@ -936,7 +938,7 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "importlib-metadata"
-version = "4.11.0"
+version = "4.11.1"
 description = "Read metadata from Python packages"
 category = "main"
 optional = true
@@ -948,7 +950,7 @@ zipp = ">=0.5"
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=8.2)", "rst.linker (>=1.9)"]
 perf = ["ipython"]
-testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-cov", "pytest-enabler (>=1.0.1)", "packaging", "pyfakefs", "flufl.flake8", "pytest-perf (>=0.9.2)", "pytest-black (>=0.3.7)", "pytest-mypy", "importlib-resources (>=1.3)"]
+testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-cov", "pytest-enabler (>=1.0.1)", "packaging", "pyfakefs", "flufl.flake8", "pytest-perf (>=0.9.2)", "pytest-black (>=0.3.7)", "pytest-mypy (>=0.9.1)", "importlib-resources (>=1.3)"]
 
 [[package]]
 name = "importlib-resources"
@@ -993,7 +995,7 @@ test = ["pytest (>=4)", "pytest-cov", "nbval (>=0.9.2)"]
 
 [[package]]
 name = "ipykernel"
-version = "6.9.0"
+version = "6.9.1"
 description = "IPython Kernel for Jupyter"
 category = "main"
 optional = true
@@ -1261,7 +1263,7 @@ test = ["pexpect"]
 
 [[package]]
 name = "jupyter-core"
-version = "4.9.1"
+version = "4.9.2"
 description = "Jupyter core package. A base package on which Jupyter projects rely."
 category = "main"
 optional = true
@@ -1531,7 +1533,7 @@ python-versions = "*"
 
 [[package]]
 name = "nbclient"
-version = "0.5.10"
+version = "0.5.11"
 description = "A client library for executing notebooks. Formerly nbconvert's ExecutePreprocessor."
 category = "main"
 optional = true
@@ -1545,7 +1547,7 @@ traitlets = ">=4.2"
 
 [package.extras]
 sphinx = ["Sphinx (>=1.7)", "sphinx-book-theme", "mock", "moto", "myst-parser"]
-test = ["ipython", "ipykernel", "ipywidgets (<8.0.0)", "pytest (>=4.1)", "pytest-cov (>=2.6.1)", "check-manifest", "flake8", "mypy", "xmltodict", "black", "pip (>=18.1)", "wheel (>=0.31.0)", "setuptools (>=38.6.0)", "twine (>=1.11.0)"]
+test = ["ipython (<8.0.0)", "ipykernel", "ipywidgets (<8.0.0)", "pytest (>=4.1)", "pytest-asyncio", "pytest-cov (>=2.6.1)", "check-manifest", "flake8", "mypy", "xmltodict", "black", "pip (>=18.1)", "wheel (>=0.31.0)", "setuptools (>=38.6.0)", "twine (>=1.11.0)"]
 
 [[package]]
 name = "nbconvert"
@@ -1970,6 +1972,7 @@ tests = ["pytest (>=3.6)", "pytest-cov", "pytest-attrib", "beautifulsoup4", "req
 [package.source]
 type = "url"
 url = "https://github.com/pydap/pydap/archive/refs/tags/3.3.0.zip"
+
 [[package]]
 name = "pyface"
 version = "7.4.0"
@@ -2010,6 +2013,7 @@ test = ["pytest"]
 [package.source]
 type = "url"
 url = "https://github.com/pygeos/pygeos/releases/download/0.12.0/pygeos-0.12.0.tar.gz"
+
 [[package]]
 name = "pygments"
 version = "2.11.2"
@@ -2385,6 +2389,29 @@ doc = ["sphinx-click (==1.1.0)", "nbsphinx", "sphinx-rtd-theme"]
 interp = ["scipy"]
 
 [[package]]
+name = "ruamel.yaml"
+version = "0.17.21"
+description = "ruamel.yaml is a YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order"
+category = "dev"
+optional = false
+python-versions = ">=3"
+
+[package.dependencies]
+"ruamel.yaml.clib" = {version = ">=0.2.6", markers = "platform_python_implementation == \"CPython\" and python_version < \"3.11\""}
+
+[package.extras]
+docs = ["ryd"]
+jinja2 = ["ruamel.yaml.jinja2 (>=0.2)"]
+
+[[package]]
+name = "ruamel.yaml.clib"
+version = "0.2.6"
+description = "C version of reader, parser and emitter for ruamel.yaml derived from libyaml"
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[[package]]
 name = "scipy"
 version = "1.8.0"
 description = "SciPy: Scientific Library for Python"
@@ -2440,6 +2467,7 @@ vectorized = ["numpy"]
 [package.source]
 type = "url"
 url = "https://github.com/shapely/shapely/archive/refs/tags/1.7.1.zip"
+
 [[package]]
 name = "six"
 version = "1.16.0"
@@ -2504,7 +2532,7 @@ tests = ["codecov", "flake8", "hilbertcurve", "geopandas-base", "hypothesis", "p
 
 [[package]]
 name = "stack-data"
-version = "0.1.4"
+version = "0.2.0"
 description = "Extract data from python stack frames and tracebacks for informative displays"
 category = "main"
 optional = true
@@ -2516,7 +2544,7 @@ executing = "*"
 pure-eval = "*"
 
 [package.extras]
-tests = ["pytest", "typeguard", "pygments", "littleutils"]
+tests = ["pytest", "typeguard", "pygments", "littleutils", "cython"]
 
 [[package]]
 name = "tblib"
@@ -2836,8 +2864,8 @@ viz = ["geoviews", "holoviews", "hvplot", "ipykernel", "ipympl", "itkwidgets", "
 
 [metadata]
 lock-version = "1.1"
-python-versions = ">=3.8, <3.10"
-content-hash = "ca0e7ec26fb19f085fdac664fb8279d41abbbd5b259f6fe1c9f25592ed6196ed"
+python-versions = ">=3.8, <3.9"
+content-hash = "3f9989113d4f0670f46cdd1fab8aac6a333d28be2cf18e0102112935eb6f59d3"
 
 [metadata.files]
 affine = [
@@ -3261,8 +3289,8 @@ f90nml = [
     {file = "f90nml-1.3.1.tar.gz", hash = "sha256:145c1f2c55bad628d225af22fc9bf06347eb0d33e7bae8a05869a68274b8fb2d"},
 ]
 filelock = [
-    {file = "filelock-3.4.2-py3-none-any.whl", hash = "sha256:cf0fc6a2f8d26bd900f19bf33915ca70ba4dd8c56903eeb14e1e7a2fd7590146"},
-    {file = "filelock-3.4.2.tar.gz", hash = "sha256:38b4f4c989f9d06d44524df1b24bd19e167d851f19b50bf3e3559952dddc5b80"},
+    {file = "filelock-3.5.1-py3-none-any.whl", hash = "sha256:7b23620a293cf3e19924e469cb96672dc72b36c26e8f80f85668310117fcbe4e"},
+    {file = "filelock-3.5.1.tar.gz", hash = "sha256:d1eccb164ed020bc84edd9e45bf6cdb177f64749f6b8fe066648832d2e98726d"},
 ]
 findlibs = [
     {file = "findlibs-0.0.2.tar.gz", hash = "sha256:6c7e038496f9a97783ab2cd5736bb68522d5bebd8b0eb17c976b6a4ae4032c8d"},
@@ -3348,7 +3376,7 @@ fsspec = [
     {file = "fsspec-2022.1.0.tar.gz", hash = "sha256:0bdd519bbf4d8c9a1d893a50b5ebacc89acd0e1fe0045d2f7b0e0c1af5990edc"},
 ]
 gdal = [
-    {file = "GDAL-3.4.1.tar.gz", hash = "sha256:b19e8143bc2c0d3e222789a465d82b6874236eb78801aec608bf5c8c44d20fcf"},
+    {file = "GDAL-3.2.1.tar.gz", hash = "sha256:41e928fbe6880a7b38124b8dff9efe82f3d4e1bc17f771fda46bf222289ab9a4"},
 ]
 geopandas = [
     {file = "geopandas-0.10.2-py2.py3-none-any.whl", hash = "sha256:1722853464441b603d9be3d35baf8bde43831424a891e82a8545eb8997b65d6c"},
@@ -3372,8 +3400,8 @@ heapdict = [
     {file = "HeapDict-1.0.1.tar.gz", hash = "sha256:8495f57b3e03d8e46d5f1b2cc62ca881aca392fd5cc048dc0aa2e1a6d23ecdb6"},
 ]
 holoviews = [
-    {file = "holoviews-1.14.7-py2.py3-none-any.whl", hash = "sha256:d9c774ab60c212847632c4ba66ce2a38be73ba2e4e926dc2e5e11d409bd6d905"},
-    {file = "holoviews-1.14.7.tar.gz", hash = "sha256:8d8d171227e9c9eaadd4b037b3ddaa01055a33bacbdbeb57a5efbd273986665f"},
+    {file = "holoviews-1.14.8-py2.py3-none-any.whl", hash = "sha256:aa3838d0a81552a6c85b834fc7fae284472538ff4c67da8a44b2eeaa7d319ea5"},
+    {file = "holoviews-1.14.8.tar.gz", hash = "sha256:6c365599a2cb16793bb627c9b5c5430982bb591c9de8885002ff91b539b61133"},
 ]
 hvplot = [
     {file = "hvplot-0.7.3-py2.py3-none-any.whl", hash = "sha256:09410f8f569b00fcf59dc7b6d976e0bddf722d21d8d86029b7408016ab7ca477"},
@@ -3384,8 +3412,8 @@ idna = [
     {file = "idna-3.3.tar.gz", hash = "sha256:9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d"},
 ]
 importlib-metadata = [
-    {file = "importlib_metadata-4.11.0-py3-none-any.whl", hash = "sha256:6affcdb3aec542dd98df8211e730bba6c5f2bec8288d47bacacde898f548c9ad"},
-    {file = "importlib_metadata-4.11.0.tar.gz", hash = "sha256:9e5e553bbba1843cb4a00823014b907616be46ee503d2b9ba001d214a8da218f"},
+    {file = "importlib_metadata-4.11.1-py3-none-any.whl", hash = "sha256:e0bc84ff355328a4adfc5240c4f211e0ab386f80aa640d1b11f0618a1d282094"},
+    {file = "importlib_metadata-4.11.1.tar.gz", hash = "sha256:175f4ee440a0317f6e8d81b7f8d4869f93316170a65ad2b007d2929186c8052c"},
 ]
 importlib-resources = [
     {file = "importlib_resources-5.4.0-py3-none-any.whl", hash = "sha256:33a95faed5fc19b4bc16b29a6eeae248a3fe69dd55d4d229d2b480e23eeaad45"},
@@ -3400,8 +3428,8 @@ ipydatawidgets = [
     {file = "ipydatawidgets-4.2.0.tar.gz", hash = "sha256:d0e4b58b59b508165e8562b8f5d1dbfcd739855847ec0477bd9185a5e9b7c5bc"},
 ]
 ipykernel = [
-    {file = "ipykernel-6.9.0-py3-none-any.whl", hash = "sha256:1626b91c50e4605555ac6e5b29f1e5206d299a4a4a21483770a181be97f0f0e0"},
-    {file = "ipykernel-6.9.0.tar.gz", hash = "sha256:b556e292dc6fa223f24328b1c936b9c921fafcc2f420bb0d6cfdfc42eaa90225"},
+    {file = "ipykernel-6.9.1-py3-none-any.whl", hash = "sha256:4fae9df6e192837552b2406a6052d707046dd2e153860be73c68484bacba18ed"},
+    {file = "ipykernel-6.9.1.tar.gz", hash = "sha256:f95070a2dfd3147f8ab19f18ee46733310813758593745e07ec18fb08b409f1d"},
 ]
 ipympl = [
     {file = "ipympl-0.8.7-py2.py3-none-any.whl", hash = "sha256:11c3d01f0555f855c51a960964e3ab4dff38e6ccd1a4695205fe250341a9eb99"},
@@ -3520,8 +3548,8 @@ jupyter-console = [
     {file = "jupyter_console-6.4.0.tar.gz", hash = "sha256:242248e1685039cd8bff2c2ecb7ce6c1546eb50ee3b08519729e6e881aec19c7"},
 ]
 jupyter-core = [
-    {file = "jupyter_core-4.9.1-py3-none-any.whl", hash = "sha256:1c091f3bbefd6f2a8782f2c1db662ca8478ac240e962ae2c66f0b87c818154ea"},
-    {file = "jupyter_core-4.9.1.tar.gz", hash = "sha256:dce8a7499da5a53ae3afd5a9f4b02e5df1d57250cf48f3ad79da23b4778cd6fa"},
+    {file = "jupyter_core-4.9.2-py3-none-any.whl", hash = "sha256:f875e4d27e202590311d468fa55f90c575f201490bd0c18acabe4e318db4a46d"},
+    {file = "jupyter_core-4.9.2.tar.gz", hash = "sha256:d69baeb9ffb128b8cd2657fcf2703f89c769d1673c851812119e3a2a0e93ad9a"},
 ]
 jupyterlab-pygments = [
     {file = "jupyterlab_pygments-0.1.2-py2.py3-none-any.whl", hash = "sha256:abfb880fd1561987efaefcb2d2ac75145d2a5d0139b1876d5be806e32f630008"},
@@ -3862,8 +3890,8 @@ mypy-extensions = [
     {file = "mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"},
 ]
 nbclient = [
-    {file = "nbclient-0.5.10-py3-none-any.whl", hash = "sha256:5b582e21c8b464e6676a9d60acc6871d7fbc3b080f74bef265a9f90411b31f6f"},
-    {file = "nbclient-0.5.10.tar.gz", hash = "sha256:b5fdea88d6fa52ca38de6c2361401cfe7aaa7cd24c74effc5e489cec04d79088"},
+    {file = "nbclient-0.5.11-py3-none-any.whl", hash = "sha256:03e857bea3012377289daa1e1c1651f4fc0295bcd109ccd36a337efcdbebaed7"},
+    {file = "nbclient-0.5.11.tar.gz", hash = "sha256:751516992f34b58172bad54eef1e4bf7e4f4460d58e255ca1a4e5c9649476007"},
 ]
 nbconvert = [
     {file = "nbconvert-6.4.2-py3-none-any.whl", hash = "sha256:7b006ae9979af56200e7fa3db39d9d12c99e811e8843b05dbe518e5b754bcb2e"},
@@ -4539,6 +4567,37 @@ retrying = [
 rioxarray = [
     {file = "rioxarray-0.9.1.tar.gz", hash = "sha256:303e39c30918899ceeb601db628273a55796268e9e4e8b78b836080586c350e7"},
 ]
+"ruamel.yaml" = [
+    {file = "ruamel.yaml-0.17.21-py3-none-any.whl", hash = "sha256:742b35d3d665023981bd6d16b3d24248ce5df75fdb4e2924e93a05c1f8b61ca7"},
+    {file = "ruamel.yaml-0.17.21.tar.gz", hash = "sha256:8b7ce697a2f212752a35c1ac414471dc16c424c9573be4926b56ff3f5d23b7af"},
+]
+"ruamel.yaml.clib" = [
+    {file = "ruamel.yaml.clib-0.2.6-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:6e7be2c5bcb297f5b82fee9c665eb2eb7001d1050deaba8471842979293a80b0"},
+    {file = "ruamel.yaml.clib-0.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl", hash = "sha256:221eca6f35076c6ae472a531afa1c223b9c29377e62936f61bc8e6e8bdc5f9e7"},
+    {file = "ruamel.yaml.clib-0.2.6-cp310-cp310-win32.whl", hash = "sha256:1070ba9dd7f9370d0513d649420c3b362ac2d687fe78c6e888f5b12bf8bc7bee"},
+    {file = "ruamel.yaml.clib-0.2.6-cp310-cp310-win_amd64.whl", hash = "sha256:77df077d32921ad46f34816a9a16e6356d8100374579bc35e15bab5d4e9377de"},
+    {file = "ruamel.yaml.clib-0.2.6-cp35-cp35m-macosx_10_6_intel.whl", hash = "sha256:cfdb9389d888c5b74af297e51ce357b800dd844898af9d4a547ffc143fa56751"},
+    {file = "ruamel.yaml.clib-0.2.6-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:7b2927e92feb51d830f531de4ccb11b320255ee95e791022555971c466af4527"},
+    {file = "ruamel.yaml.clib-0.2.6-cp35-cp35m-win32.whl", hash = "sha256:ada3f400d9923a190ea8b59c8f60680c4ef8a4b0dfae134d2f2ff68429adfab5"},
+    {file = "ruamel.yaml.clib-0.2.6-cp35-cp35m-win_amd64.whl", hash = "sha256:de9c6b8a1ba52919ae919f3ae96abb72b994dd0350226e28f3686cb4f142165c"},
+    {file = "ruamel.yaml.clib-0.2.6-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:d67f273097c368265a7b81e152e07fb90ed395df6e552b9fa858c6d2c9f42502"},
+    {file = "ruamel.yaml.clib-0.2.6-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:72a2b8b2ff0a627496aad76f37a652bcef400fd861721744201ef1b45199ab78"},
+    {file = "ruamel.yaml.clib-0.2.6-cp36-cp36m-win32.whl", hash = "sha256:9efef4aab5353387b07f6b22ace0867032b900d8e91674b5d8ea9150db5cae94"},
+    {file = "ruamel.yaml.clib-0.2.6-cp36-cp36m-win_amd64.whl", hash = "sha256:846fc8336443106fe23f9b6d6b8c14a53d38cef9a375149d61f99d78782ea468"},
+    {file = "ruamel.yaml.clib-0.2.6-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:0847201b767447fc33b9c235780d3aa90357d20dd6108b92be544427bea197dd"},
+    {file = "ruamel.yaml.clib-0.2.6-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:78988ed190206672da0f5d50c61afef8f67daa718d614377dcd5e3ed85ab4a99"},
+    {file = "ruamel.yaml.clib-0.2.6-cp37-cp37m-win32.whl", hash = "sha256:a49e0161897901d1ac9c4a79984b8410f450565bbad64dbfcbf76152743a0cdb"},
+    {file = "ruamel.yaml.clib-0.2.6-cp37-cp37m-win_amd64.whl", hash = "sha256:bf75d28fa071645c529b5474a550a44686821decebdd00e21127ef1fd566eabe"},
+    {file = "ruamel.yaml.clib-0.2.6-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:a32f8d81ea0c6173ab1b3da956869114cae53ba1e9f72374032e33ba3118c233"},
+    {file = "ruamel.yaml.clib-0.2.6-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:7f7ecb53ae6848f959db6ae93bdff1740e651809780822270eab111500842a84"},
+    {file = "ruamel.yaml.clib-0.2.6-cp38-cp38-win32.whl", hash = "sha256:89221ec6d6026f8ae859c09b9718799fea22c0e8da8b766b0b2c9a9ba2db326b"},
+    {file = "ruamel.yaml.clib-0.2.6-cp38-cp38-win_amd64.whl", hash = "sha256:31ea73e564a7b5fbbe8188ab8b334393e06d997914a4e184975348f204790277"},
+    {file = "ruamel.yaml.clib-0.2.6-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:dc6a613d6c74eef5a14a214d433d06291526145431c3b964f5e16529b1842bed"},
+    {file = "ruamel.yaml.clib-0.2.6-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:1866cf2c284a03b9524a5cc00daca56d80057c5ce3cdc86a52020f4c720856f0"},
+    {file = "ruamel.yaml.clib-0.2.6-cp39-cp39-win32.whl", hash = "sha256:3fb9575a5acd13031c57a62cc7823e5d2ff8bc3835ba4d94b921b4e6ee664104"},
+    {file = "ruamel.yaml.clib-0.2.6-cp39-cp39-win_amd64.whl", hash = "sha256:825d5fccef6da42f3c8eccd4281af399f21c02b32d98e113dbc631ea6a6ecbc7"},
+    {file = "ruamel.yaml.clib-0.2.6.tar.gz", hash = "sha256:4ff604ce439abb20794f05613c374759ce10e3595d1867764dd1ae675b85acbd"},
+]
 scipy = [
     {file = "scipy-1.8.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:87b01c7d5761e8a266a0fbdb9d88dcba0910d63c1c671bdb4d99d29f469e9e03"},
     {file = "scipy-1.8.0-cp310-cp310-macosx_12_0_arm64.whl", hash = "sha256:ae3e327da323d82e918e593460e23babdce40d7ab21490ddf9fc06dec6b91a18"},
@@ -4594,8 +4653,8 @@ spatialpandas = [
     {file = "spatialpandas-0.4.3.tar.gz", hash = "sha256:7f24d8d2b07bda5b9de3493dab6bbb16bbb533ff5b60963f99b35af704bf0235"},
 ]
 stack-data = [
-    {file = "stack_data-0.1.4-py3-none-any.whl", hash = "sha256:02cc0683cbc445ae4ca8c4e3a0e58cb1df59f252efb0aa016b34804a707cf9bc"},
-    {file = "stack_data-0.1.4.tar.gz", hash = "sha256:7769ed2482ce0030e00175dd1bf4ef1e873603b6ab61cd3da443b410e64e9477"},
+    {file = "stack_data-0.2.0-py3-none-any.whl", hash = "sha256:999762f9c3132308789affa03e9271bbbe947bf78311851f4d485d8402ed858e"},
+    {file = "stack_data-0.2.0.tar.gz", hash = "sha256:45692d41bd633a9503a5195552df22b583caf16f0b27c4e58c98d88c8b648e12"},
 ]
 tblib = [
     {file = "tblib-1.7.0-py2.py3-none-any.whl", hash = "sha256:289fa7359e580950e7d9743eab36b0691f0310fce64dee7d9c31065b8f723e23"},
