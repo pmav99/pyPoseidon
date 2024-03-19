@@ -1,6 +1,7 @@
 channels:
   - conda-forge
   - gbrey
+  - tomsail
 dependencies:
   - cartopy
   - cfgrib
@@ -41,3 +42,4 @@ dependencies:
   - spatialpandas
   - tqdm
   - xarray
+  - opentelemac

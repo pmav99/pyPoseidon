@@ -1,6 +1,7 @@
 channels:
   - conda-forge
   - gbrey
+  - tomsail
 dependencies:
   - compilers
   - eccodes
@@ -12,3 +13,4 @@ dependencies:
   - pip
   - proj
   - python=3.11
+  - opentelemac

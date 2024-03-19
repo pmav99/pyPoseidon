@@ -6,10 +6,10 @@ init:
 	poetry install -E viz --with dev --with docs --with test
 
 test:
-	pytest -vl --durations=10 -m 'not (schism or delft or viz or slow)' -n auto
+	pytest -vl --durations=10 -m 'not (schism or delft or telemac or viz or slow)' -n auto
 
 test_fail:
-	pytest -vl --lf --runschism --rundelft --runviz
+	pytest -vl --lf --runschism --rundelft --runtelemac --runviz
 
 test_viz:
 	pytest -vl --durations=10 --runviz -m viz
@@ -20,8 +20,11 @@ test_schism:
 test_delft:
 	pytest -vl --durations=10 --rundelft -m delft
 
+test_telemac:
+	pytest -vl --durations=10 --runtelemac -m telemac
+
 test_full:
-	pytest -vl --durations=20 --runschism --rundelft --runviz
+	pytest -vl --durations=20 --runschism --rundelft --runtelemac --runviz
 
 conda_lock:
 	./scripts/generate_envs.sh
