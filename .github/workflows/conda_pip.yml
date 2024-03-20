@@ -1,7 +1,6 @@
 ---
 name: "Conda + pip"
 
-
 # Use login shell everywhere
 # https://github.com/mamba-org/setup-micromamba/tree/fcc371cea11af9012e5e916ab2dab44b42acdaaa#about-login-shells
 
@@ -69,8 +68,9 @@ jobs:
       SCHISM_LOCK: locks/conda-${{ matrix.os }}-schism_${{ matrix.mpi }}.lock
       DELFT3D_LOCK: locks/conda-${{ matrix.os }}-delft3d_${{ matrix.mpi }}.lock
       PYPOSEIDON_LOCK: locks/conda-${{ matrix.os }}-binary-p${{ matrix.python }}.lock
-      PYPOS_TEL_LOCK: locks/conda-${{ matrix.os }}-binary-p${{ matrix.python }}_tel.lock
+      PYPOS_TEL_LOCK: locks/conda-${{ matrix.os }}-binary-telemac-${{ matrix.mpi }}-p${{ matrix.python }}.lock
       REQUIREMENTS_CI: locks/requirements-ci.txt
+      REQUIREMENTS_CI_TEL: locks/requirements-ci-telemac.txt
       REQUIREMENTS_VIZ: locks/requirements-viz.txt
 
     defaults:
@@ -136,7 +136,7 @@ jobs:
         id: cache-PYPOS_TEL_ENV
         with:
           path: ~/micromamba/envs/${{ env.PYPOS_TEL_ENV }}
-          key: ${{ matrix.os }}-${{ matrix.python }}-${{ env.PYPOS_TEL_ENV }}-${{ hashFiles( env.PYPOS_TEL_LOCK )}}-${{ hashFiles( env.REQUIREMENTS_CI )}}
+          key: ${{ matrix.os }}-${{ matrix.python }}-${{ env.PYPOS_TEL_ENV }}-${{ hashFiles( env.PYPOS_TEL_LOCK )}}-${{ hashFiles( env.REQUIREMENTS_CI_TEL )}}
           restore-keys: |
             ${{ matrix.os }}-${{ matrix.python }}-${{ env.PYPOS_TEL_ENV }}-${{ hashFiles( env.PYPOS_TEL_LOCK )}}
             ${{ matrix.os }}-${{ matrix.python }}-${{ env.PYPOS_TEL_ENV }}-
@@ -177,11 +177,10 @@ jobs:
       - name: "Install python dependencies for pyposeidon + telemac"
         run: |
           eval "$(micromamba shell hook)"
-          micromamba activate --stack "${PYPOS_TEL_ENV}"
+          micromamba activate "${PYPOS_TEL_ENV}"
           python -mpip install -U pip
-          python -mpip install -r "${REQUIREMENTS_CI}"
+          python -mpip install -r "${REQUIREMENTS_CI_TEL}"
           python -mpip install ./
-          python -mpip install mpi4py
 
       - name: "Run tests: Basic"
         run: |
@@ -203,15 +202,13 @@ jobs:
         run: |
           eval "$(micromamba shell hook)"
           micromamba activate "${SCHISM_ENV}"
-          # micromamba activate --stack "${DELFT3D_ENV}"
           micromamba activate --stack "${PYPOSEIDON_ENV}"
           make test_schism
 
       - name: "Run tests: Delft"
         run: |
           eval "$(micromamba shell hook)"
-          # micromamba activate "${SCHISM_ENV}"
-          micromamba activate --stack "${DELFT3D_ENV}"
+          micromamba activate "${DELFT3D_ENV}"
           micromamba activate --stack "${PYPOSEIDON_ENV}"
           make test_delft
 

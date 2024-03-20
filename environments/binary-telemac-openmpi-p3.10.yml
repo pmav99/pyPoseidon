@@ -1,6 +1,7 @@
 channels:
   - conda-forge
   - gbrey
+  - tomsail
 dependencies:
   - compilers
   - eccodes
@@ -9,6 +10,7 @@ dependencies:
   - geos
   - gmsh>=4.9.3
   - jigsaw>=0.9.12
+  - opentelemac=main*=openmpi*
   - pip
   - proj
   - python=3.10

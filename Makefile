@@ -35,6 +35,7 @@ poetry_lock:
 	poetry export --without-hashes -f requirements.txt -o locks/requirements.txt
 	poetry export --without-hashes -f requirements.txt --extras viz -o locks/requirements-viz.txt
 	poetry export --without-hashes -f requirements.txt --with dev --with test -o locks/requirements-ci.txt
+	poetry export --without-hashes -f requirements.txt --with dev --with test --with telemac -o locks/requirements-ci-telemac.txt
 	poetry export --without-hashes -f requirements.txt --extras viz --with dev --with docs --with test -o locks/requirements-full.txt
 
 lock: \

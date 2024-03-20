@@ -1,7 +1,6 @@
 channels:
   - conda-forge
   - gbrey
-  - tomsail
 dependencies:
   - black<24.0
   - bump2version
@@ -53,4 +52,3 @@ dependencies:
   - spatialpandas
   - tqdm
   - xarray
-  - opentelemac
