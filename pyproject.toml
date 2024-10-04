@@ -32,8 +32,7 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-# python = ">=3.10, <3.11"
-python = ">=3.9, <4"
+python = ">=3.10, <4"
 bottleneck = "*"
 Cartopy = "*"
 cfgrib = "*"
@@ -136,4 +135,4 @@ markers = [
 
 [tool.black]
 line-length = 119
-target-version = ['py39']
+target-version = ['py310']
